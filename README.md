@@ -76,7 +76,7 @@ yarn test
 
 ## Project Structure
 
-### **src**
+#### **src**
 This directory contains the main codebase for the backend API.
 
 #### **delivery**
