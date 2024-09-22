@@ -10,4 +10,9 @@ export class DeliveryController {
   getNextDelivery(@Param("userId", ValidateUUIDPipe) userId: string) {
     return this.deliveryService.getNextDelivery(userId);
   }
+
+  @Get("/all-user-ids")
+  getAllUserIds() {
+    return this.deliveryService.getAllUserIds();
+  }
 }

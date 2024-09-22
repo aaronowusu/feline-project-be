@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "9089804b-e61a-4b2b-a7b0-2b448c64879d",
+		"name": "Feline Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18744766"
+	},
+	"item": [
+		{
+			"name": "Check Formatting of Cat Names",
+			"item": [
+				{
+					"name": "Get User With One Cat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/comms/your-next-delivery/618f4ed6-1c5b-4993-a149-f64700bf31dd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comms",
+								"your-next-delivery",
+								"618f4ed6-1c5b-4993-a149-f64700bf31dd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User With Two Cats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/comms/your-next-delivery/806a49c0-01d6-48a1-8e83-7790c8af769b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comms",
+								"your-next-delivery",
+								"806a49c0-01d6-48a1-8e83-7790c8af769b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User With Three Cats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/comms/your-next-delivery/ea17433d-7527-45a5-acbc-2e2f78f95c6e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comms",
+								"your-next-delivery",
+								"ea17433d-7527-45a5-acbc-2e2f78f95c6e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Check Presence of Ribbon",
+			"item": [
+				{
+					"name": "Get User that has a Ribbon",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/comms/your-next-delivery/33b449a6-d92b-4609-9910-69a8979a04b2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comms",
+								"your-next-delivery",
+								"33b449a6-d92b-4609-9910-69a8979a04b2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET Next Delivery By UserId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/comms/your-next-delivery/<userId>",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comms",
+						"your-next-delivery",
+						"<userId>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All UserIds",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/comms/all-user-ids",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comms",
+						"all-user-ids"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "inherit"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

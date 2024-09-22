@@ -16,6 +16,21 @@ describe("DeliveryRepository", () => {
     jest.clearAllMocks();
   });
 
+  it('should return an array of user IDs', async () => {
+    const mockUsers: User[] = [
+      { id: '123', firstName: 'John', lastName: 'Doe', email: 'john@example.com', cats: [] },
+      { id: '456', firstName: 'Jane', lastName: 'Doe', email: 'jane@example.com', cats: [] },
+      { id: '789', firstName: 'Jim', lastName: 'Doe', email: 'jim@example.com', cats: [] },
+    ];
+
+    (readFile as jest.Mock).mockResolvedValueOnce(JSON.stringify(mockUsers));
+
+    const result = await repository.getAllUserIds();
+
+    expect(result).toEqual(['123', '456', '789']);
+    expect(readFile).toHaveBeenCalledTimes(1);
+  });
+
   it("should return the correct user when userId exists", async () => {
     const mockUsers: User[] = [
       {

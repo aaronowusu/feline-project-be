@@ -14,6 +14,7 @@ describe("DeliveryController", () => {
         {
           provide: DeliveryService,
           useValue: {
+            getAllUserIds: jest.fn(),
             getNextDelivery: jest.fn(),
           },
         },
@@ -24,6 +25,17 @@ describe("DeliveryController", () => {
     service = module.get<DeliveryService>(DeliveryService);
   });
 
+  describe('getAllUserIds', () => {
+    it('should return an array of user IDs', async () => {
+      const mockUserIds = ['123', '456', '789'];
+      jest.spyOn(service, 'getAllUserIds').mockResolvedValueOnce(mockUserIds);
+
+      const result = await controller.getAllUserIds();
+
+      expect(result).toEqual(mockUserIds);
+      expect(service.getAllUserIds).toHaveBeenCalled();
+    });
+  });
   describe("getNextDelivery", () => {
     it("should call the service with the correct userId", async () => {
       const userId = "9e3f04bb-d485-4dab-a08b-a6c356f30a03";

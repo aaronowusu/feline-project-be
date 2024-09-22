@@ -60,6 +60,36 @@ This project provides a backend REST API using NestJS for generating personalise
       "totalPrice": 134.00,
       "freeGift": true
     }
+    ```
+
+  ### ` /comms/all-user-ids`
+
+   - **Method**: GET
+
+  - **Description**: This endpoint returns an array of all user IDs found in the data.json file.
+
+  - **Request Parameters**: 
+    - No parameters are required for this request.
+
+  - **Response**:
+    - `200 OK`: Returns an array of user IDs if users are found.
+    - `404 Not Found`: If no users are found in the data.json file.
+  
+  - **Example Request**:
+
+    ```bash
+    curl --location 'http://localhost:3000/comms/all-user-ids'
+    ```
+
+  - **Example Response**:
+
+    ```json
+    [
+      "123e4567-e89b-12d3-a456-426614174000",
+      "789e4567-e89b-12d3-a456-426614174789",
+      "456e4567-e89b-12d3-a456-426614174456"
+    ]
+    ```
 
 
 ## Postman Collection

@@ -15,6 +15,7 @@ describe("DeliveryService", () => {
           provide: DeliveryRepository,
           useValue: {
             getNextDelivery: jest.fn(),
+            getAllUserIds: jest.fn(),
           },
         },
       ],
@@ -301,6 +302,18 @@ describe("DeliveryService", () => {
 
       expect(result).toEqual(expectedResult);
       expect(repository.getNextDelivery).toHaveBeenCalledWith(mockUser.id);
+    });
+  });
+
+  describe('getAllUserIds', () => {
+    it('should return an array of user IDs', async () => {
+      const mockUserIds = ['123', '456', '789'];
+      jest.spyOn(repository, 'getAllUserIds').mockResolvedValueOnce(mockUserIds);
+
+      const result = await service.getAllUserIds();
+
+      expect(result).toEqual(mockUserIds);
+      expect(repository.getAllUserIds).toHaveBeenCalled();
     });
   });
 });

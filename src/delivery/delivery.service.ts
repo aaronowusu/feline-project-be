@@ -43,4 +43,8 @@ export class DeliveryService {
       freeGift,
     };
   }
+
+  async getAllUserIds(): Promise<string[]> {
+    return this.deliveryRepository.getAllUserIds();
+  }
 }

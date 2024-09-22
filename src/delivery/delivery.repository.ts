@@ -5,20 +5,31 @@ import { User } from "src/types";
 
 @Injectable()
 export class DeliveryRepository {
-  async getNextDelivery(userId: string): Promise<User> {
+  private async readUsersFromFile(): Promise<User[]> {
     const filePath = path.join(__dirname, "..", "..", "data.json");
-
-    // Read the JSON file asynchronously
     const data = await readFile(filePath, "utf8");
     const users: User[] = JSON.parse(data);
 
-    // Find the user by 'userId'
-    const user = users.find((user) => user.id === userId);
+    if (!users.length) {
+      throw new NotFoundException("No users found");
+    }
 
+    return users;
+  }
+
+  async getNextDelivery(userId: string): Promise<User> {
+    const users = await this.readUsersFromFile();
+
+    const user = users.find((user) => user.id === userId);
     if (!user) {
       throw new NotFoundException("User not found");
     }
 
     return user;
+  }
+
+  async getAllUserIds(): Promise<string[]> {
+    const users = await this.readUsersFromFile();
+    return users.map(user => user.id);
   }
 }
